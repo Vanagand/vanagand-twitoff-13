@@ -1,6 +1,6 @@
-# hello.py
+# app.py
 
-import flask from Flask
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -12,7 +12,3 @@ def hello_world():
 def about():
     x = 2 + 2
     return f"About me {x}"
-
-""" Foot notes
-    * CTRL + C will refresh server in command line
-"""
