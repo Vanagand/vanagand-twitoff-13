@@ -11,6 +11,7 @@ from web_app.routes.book_routes import book_routes
 def create_app():
     app = Flask(__name__)
 
+    # In case of failure delete .db and run code
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/Michel/Desktop/lambda_ds13/vanagand-twitoff-13/web_app/twitoff_13.db"
     
     db.init_app(app)

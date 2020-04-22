@@ -1,6 +1,6 @@
 # Personal
-test_file.py
 migrations
+web_app/*.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
