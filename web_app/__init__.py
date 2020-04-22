@@ -26,3 +26,6 @@ if __name__ == "__main__":
     web_app = create_app()
     web_app.run(debug=True)
     
+#FLASK_APP=web_app flask db migrate #> creates the db (with "alembic_version" table)
+#FLASK_APP=web_app flask db upgrade #> creates the specified tables
+    
