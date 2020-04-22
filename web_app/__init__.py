@@ -10,8 +10,8 @@ from web_app.routes.book_routes import book_routes
 # application factory pattern
 def create_app():
     app = Flask(__name__)
-    
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:\\\\Users\Michel\Desktop\lambda_ds13\vanagand-twitoff-13\web_app\twitoff_13.db"
+
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/Michel/Desktop/lambda_ds13/vanagand-twitoff-13/web_app/twitoff_13.db"
     
     db.init_app(app)
     migrate.init_app(app, db)
