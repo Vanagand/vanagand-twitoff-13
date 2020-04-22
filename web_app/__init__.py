@@ -1,31 +1,25 @@
 # web_app/__init__.py
-# $env:FLASK_APP = "web_app"
-# flask run
+# $env:FLASK_APP = "web_app" > flask run
 
 from flask import Flask
 
-# app = Flask(__name__)
-
-# @app.route("/") # handle requests to the home page
-# def hello_world():
-#     return "Hello, World!"
-
-# @app.route("/about") # localhost:5000/about
-# def about():
-#     x = 2 + 2
-#     return f"About me: {x}"
-
-# # set FLASK_APP=app.py
-# # flask run
-
+from web_app.models import db, migrate
 from web_app.routes.home_routes import home_routes
 from web_app.routes.book_routes import book_routes
 
 # application factory pattern
 def create_app():
     app = Flask(__name__)
+
+    # In case of failure delete .db and run code
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/Michel/Desktop/lambda_ds13/vanagand-twitoff-13/web_app/twitoff_13.db"
+    
+    db.init_app(app)
+    migrate.init_app(app, db)
+    
     app.register_blueprint(home_routes)
     app.register_blueprint(book_routes)
+    
     return app
 
 if __name__ == "__main__":
