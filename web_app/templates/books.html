@@ -1,6 +1,7 @@
 <!-- web_app/templates/books.html-->
 
 {% extends "layout.html" %}
+{% set active_page = "books" %}
 
 {% block content %}
 
@@ -14,7 +15,6 @@
             <li>{{ books["title"] }}</li>
         {% endfor %}
         </ul>
-    
     {% else %}
         <p>Books not found.</p>
     {% endif %}
@@ -33,8 +33,6 @@
     <title>Document</title>
 </head>
 <body>
-
-{{ default unique template }}
 
 </body>
 </html>
